@@ -1,0 +1,37 @@
+<html>
+  <head>
+    <title>geek</title>
+    <link rel="stylesheet" type="text/css" href="all.css" />
+  </head>
+  <body>
+
+    <!-- Geeks list -->
+    <div class="sidebar">
+      <ul class="geeks">
+        <% @geeks.each do |geek| %>
+          <li class="geek" id="<%= geek['name'] %>">
+          <img src="img/geeks/<%= geek['name'] %>.jpg" />
+          <form action="save" method="post" >
+            <input type="hidden" name="x" value="<%= geek['x'] %>" />
+            <input type="hidden" name="y" value="<%= geek['y'] %>" />
+            <input type="hidden" name="z" value="<%= geek['z'] %>" />
+            <input type="hidden" name="name" value="<%= geek['name'] %>" />
+            <input type="hidden" name="text" value="<%= geek['text'] %>" />
+          </form>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+
+    <!-- Playground -->
+    <div class="playground">
+      <div id="haut"><img src="haut.png"></div>
+      <div id="bas"><img src="bas.png"></div>
+    </div>
+
+    <script src="mootools-1.2.4-core.js" type="text/javascript" charset="utf-8"></script>
+    <script src="mootools-1.2.4.2-more.js" type="text/javascript" charset="utf-8"></script>
+    <script type="text/javascript" src="geek.js"></script>
+
+  </body>
+</html>

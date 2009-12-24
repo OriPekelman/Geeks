@@ -1,0 +1,4 @@
+.playground {width: 800px; margin: 10px auto 10px auto;}
+.playground .haut {margin-bottom: 25px;}
+.sidebar {float: left; border: 1px black solid; -moz-border-radius: 10px; height:300px;width:100px;margin: 0; padding: 0;}
+.sidebar li {list-style: none; margin: 0; padding:0;}
