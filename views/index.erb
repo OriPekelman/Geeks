@@ -1,37 +1,71 @@
-<html>
-  <head>
-    <title>geek</title>
-    <link rel="stylesheet" type="text/css" href="all.css" />
-  </head>
-  <body>
-
-    <!-- Geeks list -->
-    <div class="sidebar">
-      <ul class="geeks">
-        <% @geeks.each do |geek| %>
-          <li class="geek" id="<%= geek['name'] %>">
-          <img src="img/geeks/<%= geek['name'] %>.jpg" />
-          <form action="save" method="post" >
-            <input type="hidden" name="x" value="<%= geek['x'] %>" />
-            <input type="hidden" name="y" value="<%= geek['y'] %>" />
-            <input type="hidden" name="z" value="<%= geek['z'] %>" />
-            <input type="hidden" name="name" value="<%= geek['name'] %>" />
-            <input type="hidden" name="text" value="<%= geek['text'] %>" />
-          </form>
-          </li>
-        <% end %>
-      </ul>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+  <title>geek</title>
+  <link rel="stylesheet" type="text/css" href="/stylesheets/base.css" />
+</head>
+<body>
+<div id="header" class="clear-block">
+  <p class="logo"><span>AF83 - Geeks</span></p>
+</div>
+<div id="page_margins">
+  <div id="page">
+    <div id="main">
+      <div id="col1">
+        <!-- Geeks list -->
+        <div class="block">
+          <div class="headerBlock">
+            <h1 class="txtBlue">Geeks</h1>
+          </div>
+          <div class="contentBlock clear-block">
+            <ul class="geeks">
+              <% @geeks.each do |geek| %>
+                <li class="geek <%= geek['pole'] %>" id="<%= geek['name'] %>">
+                  <img src="/images/geeks/<%= geek['name'] %>.png" alt="<%= geek['name'] %>" title="<%= geek['name'] %>" />
+                  <form action="save" method="post" >
+                    <input type="hidden" name="x" value="<%= geek['x'] %>" />
+                    <input type="hidden" name="y" value="<%= geek['y'] %>" />
+                    <input type="hidden" name="z" value="<%= geek['z'] %>" />
+                    <input type="hidden" name="name" value="<%= geek['name'] %>" />
+                    <input type="hidden" name="text" value="<%= geek['text'] %>" />
+                  </form>
+                </li>
+              <% end %>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div id="col2">
+        <div class="block">
+          <div class="headerBlock">
+            <h1>Rez-de-chaussée</h1>
+          </div>
+          <div class="contentBlock">
+            <div id="bas"><img src="/images/bas.png" alt="Floor on the bottom" /></div>
+          </div>
+        </div>
+        <div class="block">
+          <div class="headerBlock">
+            <h1>1er étage</h1>
+          </div>
+          <div class="contentBlock">
+            <div id="haut"><img src="/images/haut.png" alt="Floor on the top" /></div>
+          </div>
+        </div>
+      </div>
     </div>
+  </div>
+</div>
+<div id="footer" class="clear">
+  <p>Geeks by _gr_, oz and Challet at af83</p>
+</div>
 
-    <!-- Playground -->
-    <div class="playground">
-      <div id="haut"><img src="haut.png"></div>
-      <div id="bas"><img src="bas.png"></div>
-    </div>
+ <script src="/javascripts/mootools-1.2.4-core.js" type="text/javascript" charset="utf-8"></script>
+ <script src="/javascripts/mootools-1.2.4.2-more.js" type="text/javascript" charset="utf-8"></script>
+ <script src="/javascripts/geek.js" type="text/javascript" charset="utf-8"></script>
+ <script src="/javascripts/mocha_v.0.9.5/scripts/mocha.js" type="text/javascript" charset="utf-8"></script>
 
-    <script src="mootools-1.2.4-core.js" type="text/javascript" charset="utf-8"></script>
-    <script src="mootools-1.2.4.2-more.js" type="text/javascript" charset="utf-8"></script>
-    <script type="text/javascript" src="geek.js"></script>
-
-  </body>
+</body>
 </html>

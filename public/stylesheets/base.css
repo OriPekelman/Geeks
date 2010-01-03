@@ -1,0 +1,132 @@
+@charset "UTF-8";
+/**
+
+ * @copyright       Copyright 2007, AF83
+ * @link            http://www.af83.com
+ * @lastmodified    $Date: 2007-11-14 13:00:00 $
+ */
+
+@media all
+{
+  /* Styles globaux */
+  * { margin: 0; padding: 0; border: 0; color: inherit; background-color: inherit; text-decoration: none; list-style-type: none; }
+  #jquery-lightbox, 
+  #jquery-lightbox * { background-color: transparent; }
+  body { font-family: Arial; font-size: 12px; background: #E9E9E9; }
+  div.clear { clear: both; }
+  .clear { clear: both; }
+  .clear-block:after { content: "."; display: block; height: 0; clear: both; visibility: hidden; }
+  .clear-block { display: inline-block; }
+  /* Hides from IE-mac \*/
+  * html .clear-block { height: 1%; }
+  .clear-block { display: block; }
+  input { cursor: pointer; border: 1px solid black; }
+
+  /* Layout: width, background, borders */
+  #page_margins { width: 995px; margin: 0 auto; background: #E9E9E9; }
+  #page { position: relative; }
+
+  /* Centering layout in old IE-versions */
+  body { text-align: center; }
+  #page_margins { text-align: left; }
+
+  /* Designing main layout elements */
+  #main { width: 995px; margin: 0; padding: 10px 0; }
+  html>body #main { float: left; }
+    #col1 { float: left; width: 185px; }
+    #col2 { float: left; width: 800px; margin: 0 0 0 10px; }
+
+  /* Color for text */
+  .txtWhite { color: #FFFFFF !important; }
+    a.txtWhite, .txtWhite a { color: #FFFFFF !important; }
+  .txtBlack { color: #000000 !important; }
+    a.txtBlack, .txtBlack a { color: #000000 !important; }
+  .txtGrey { color: #666666 !important; }
+    a.txtGrey, .txtGrey a { color: #666666 !important; }
+  .txtGreyLight { color: #818181 !important; }
+    a.txtGreyLight, .txtGreyLight a { color: #818181 !important; }
+  .txtRed { color: #c80000 !important; }
+    a.txtRed, .txtRed a { color: #c80000 !important; }
+  .txtBlue { color: #4ca2b9 !important; }
+    a .txtBlue, a.txtBlue { color: #4ca2b9 !important; }
+
+  /* Color for hover */
+  .hoverWhite a:hover, a.hoverWhite:hover { color: #FFFFFF !important; }
+  .hoverGrey a:hover, a.hoverGrey:hover { color: #666666  !important; }
+  .hoverBlack a:hover, a.hoverBlack:hover { color: #000000 !important; }
+
+  /* Placement for text */
+  .txtLeft { text-align: left; }
+  .txtCenter { text-align: center; }
+  .txtRight { text-align: right; }
+  .txtJustify { text-align: justify; }
+
+  /* txt-transform */
+  .upper { text-transform: uppercase; }
+  .lower { text-transform: lowercase; }
+  .deco, .deco a { text-decoration: underline;}
+  .decoNone { text-decoration: none;}
+  .hoverDeco a:hover, a.hoverDeco:hover { text-decoration: underline; }
+  .hoverDecoNone a:hover, a.hoverDecoNone:hover { text-decoration: none; }
+  .bold { font-weight: bold; }
+  .noBold { font-weight: normal !important;}
+
+  /* Color for background */
+  .backBlack { background-color: #000000 !important; }
+  .backWhite { background-color: #fff !important; }
+  .backGrey { background-color: #666 !important; }
+  .backGreyDark { background-color: #b5b5b5 !important; }
+  .backGreyLight { background-color: #d9d9d9 !important; }
+
+  /* border */
+  .borderBlack { border: 1px solid #000000; }
+  .borderWhite { border: 1px solid #ffffff; }
+  .borderRed { border: 1px solid #c80000; }
+  .borderGrey { border: 1px solid #666666; }
+
+  /* Font-size title */
+  h1 { font-size: 18px;}
+  h2 { font-size: 14px;}
+  h3 { }
+  .small{ }
+
+  hr { border: 1px solid #f1f1f1; }
+
+  .floatLeft { float: left; }
+  .floatRight { float: right; }
+
+  /* Color by pole */
+  .projet img { border: 1px solid green; }
+  .maintenance img { border: 1px solid blue; }
+  .ux img { border: 1px solid #f928c0; }
+  .crea img { border: 1px solid red; }
+  .cdp img { border: 1px solid orange; }
+  .rd img { border: 1px solid purple; }
+  .qa img { border: 1px solid maroon; }
+  
+  /* header */
+  #header { background: #4ca2b9; }
+  #header p.logo { margin: 0 auto; display: block; width: 990px; height: 158px; background: url("/images/logo.png") 0 0 no-repeat; }
+  #header p.logo span { display: none; }
+ 
+  /* footer */
+  #footer { margin: 20px 0 0 0; padding: 30px; background: #FFF; border-top: 1px solid #4ca2b9; }
+  #footer p { margin: 0; font: normal 11px Arial; color: #4ca2b9; text-align: center; }
+
+  /* Blocks on col1 */
+  #col1 .block { margin: 10px 0 0 0; background: #FFF; border: 1px solid #FFF; -moz-border-radius: 5px; -webkit-border-radius: 5px; }
+  #col1 .block .headerBlock { padding: 10px; border-bottom: 1px solid #4ca2b9; }
+  #col1 .block .contentBlock { padding: 10px; }
+
+  /* Blocks on col2 */
+  #col2 .block { margin: 10px 0 0 0; background: #FFF; border: 1px solid #FFF; -moz-border-radius: 5px; -webkit-border-radius: 5px; }
+  #col2 .block .headerBlock { padding: 10px; border-bottom: 1px solid #4ca2b9; }
+  #col2 .block .contentBlock { position: relative; z-index: 1; margin: 10px 0; }
+
+  /* list Geeks */
+  ul.geeks { float: left; }
+  ul.geeks li.geek { z-index: 2; float: left; width: 44px; height: 46px; margin: 0 10px 10px 0; }
+  ul.geeks li.geek form { display: none; }
+
+
+}

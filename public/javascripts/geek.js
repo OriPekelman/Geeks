@@ -22,35 +22,23 @@ window.addEvent('domready', function() {
             outside_playground(elmt);
         }
 
+
+
         // give geeks the draggable ability.
         geeks.push(new Drag.Move(elmt, {
             droppables: [$('haut'), $('bas')],
             precalculate: true,
-            onDrop: function(element, droppable, event) {
-		    this.stopPropagation(event);
-		//event.stopPropagation();
-	        var coords = element.getCoordinates(droppable);
-        	element.getElement('form input[name=x]').value = droppable ? coords.left : 0;
-	        element.getElement('form input[name=y]').value = droppable ? coords.top : 0;
-        	element.getElement('form input[name=z]').value = droppable ? droppable.getAttribute('id') : '';
-	        element.setStyle('position', 'absolute');
-	        element.getElement('form').send();
-	        if(!droppable)
-	        {
-	            outside_playground(element);
-	        }
-	    }
+            onDrop: playground_drop
         }));
 
 	// dialog to submit name/text
-	elmt.addEvent('click', geek_dialog.bindWithEvent(this, elmt));
+	//elmt.addEvent('click', geek_dialog.bindWithEvent(this, elmt));
     });
 });
 
 // call back on a geek element click
 var geek_dialog = function(e, element)
 {
-	e.stop();
 	var f = element.getElement('form');
 	f.getElement('input[name=text]').type="textarea";
 	var name = f.getElement('input[name=name]').value;
@@ -58,9 +46,6 @@ var geek_dialog = function(e, element)
 	        title: name,
 		content: f
 	});
-	// show dialog
-	// add form to dialog
-	// show hidden field
 	// bind submit
 	// bind close
 }
@@ -68,7 +53,6 @@ var geek_dialog = function(e, element)
 // geek position change. Will post and save on server.
 // if not drop on a play_ground, will reset to list position.
 var playground_drop = function(element, droppable, event) {
-	event.stop();
         var coords = element.getCoordinates(droppable);
         element.getElement('form input[name=x]').value = droppable ? coords.left : 0;
         element.getElement('form input[name=y]').value = droppable ? coords.top : 0;
