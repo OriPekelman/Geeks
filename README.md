@@ -1,3 +1,4 @@
+# [NOT MAINTAINED]
 
 Primary goal is to make an AF83 people map in a funny way.
 2scd one is to show some activity.
